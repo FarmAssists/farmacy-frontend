@@ -101,6 +101,7 @@ const TagsContainer = styled.div`
 const ActionContainer = styled.div`
   display: flex;
   flex-direction: column;
+  background-color: unset;
 
   ${({ theme }) => theme.mediaQueries.sm} {
     flex-direction: row;

@@ -9,10 +9,11 @@ declare module 'styled-components' {
 
 const GlobalStyle = createGlobalStyle`
   * {
-    font-family: 'Kanit', sans-serif;
+    font-family: 'Text Me One', sans-serif;
   }
   body {
-    background-color: ${({ theme }) => theme.colors.background};
+    background-color: #000000;
+    background-image: url('/images/background.png');
 
     img {
       height: auto;

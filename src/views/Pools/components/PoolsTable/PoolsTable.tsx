@@ -14,17 +14,17 @@ interface PoolsTableProps {
 const StyledTable = styled.div`
   border-radius: ${({ theme }) => theme.radii.card};
 
-  background-color: ${({ theme }) => theme.card.background};
+  background-color: unset;
   > div:not(:last-child) {
-    border-bottom: 2px solid ${({ theme }) => theme.colors.disabled};
+    border-bottom: 3px solid #8AF7FB;
   }
 `
 
 const StyledTableBorder = styled.div`
+  border: 3px solid #8AF7FB;
   border-radius: ${({ theme }) => theme.radii.card};
-  background-color: ${({ theme }) => theme.colors.cardBorder};
+  background-color: unset;
   padding: 1px 1px 3px 1px;
-  background-size: 400% 400%;
 `
 
 const ScrollButtonContainer = styled.div`

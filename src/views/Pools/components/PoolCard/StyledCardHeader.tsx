@@ -7,9 +7,7 @@ import { getAddress } from 'utils/addressHelpers'
 import CakeVaultTokenPairImage from '../CakeVaultCard/CakeVaultTokenPairImage'
 
 const Wrapper = styled(CardHeader)<{ isFinished?: boolean; background?: string }>`
-  background: ${({ isFinished, background, theme }) =>
-    isFinished ? theme.colors.backgroundDisabled : theme.colors.gradients[background]};
-  border-radius: ${({ theme }) => `${theme.radii.card} ${theme.radii.card} 0 0`};
+  background: unset;
 `
 
 const StyledCardHeader: React.FC<{
@@ -49,12 +47,6 @@ const StyledCardHeader: React.FC<{
   return (
     <Wrapper isFinished={isFinished} background={background}>
       <Flex alignItems="center" justifyContent="space-between">
-        <Flex flexDirection="column">
-          <Heading color={isFinished ? 'textDisabled' : 'body'} scale="lg">
-            {`${getHeadingPrefix()} ${earningToken.symbol}`}
-          </Heading>
-          <Text color={isFinished ? 'textDisabled' : 'textSubtle'}>{getSubHeading()}</Text>
-        </Flex>
         {isAutoVault ? (
           <CakeVaultTokenPairImage width={64} height={64} />
         ) : (
@@ -65,9 +57,19 @@ const StyledCardHeader: React.FC<{
             height={64}
           />
         )}
+        <Flex flexDirection="column">
+          <StyledHeading color={isFinished ? 'textDisabled' : 'body'} scale="lg">
+            {`${getHeadingPrefix()} ${earningToken.symbol}`}
+          </StyledHeading>
+          <Text color={isFinished ? 'textDisabled' : '#FFFFFF'}>{getSubHeading()}</Text>
+        </Flex>
       </Flex>
     </Wrapper>
   )
 }
 
 export default StyledCardHeader
+
+const StyledHeading = styled(Heading)`color: #FFFFFF;
+text-shadow: 0px 0px 10px #00F0FF;
+`

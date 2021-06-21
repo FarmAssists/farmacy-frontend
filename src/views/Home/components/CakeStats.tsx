@@ -10,6 +10,12 @@ import CardValue from './CardValue'
 const StyledCakeStats = styled(Card)`
   margin-left: auto;
   margin-right: auto;
+  border: 4px solid #8AF7FB;
+  border-radius: 25px;
+  background-color: unset;
+  border: 4px solid #44AFF3;
+  filter: drop-shadow(0px 0px 9px #7DF1FE);
+  border-radius: 25px;
 `
 
 const Row = styled.div`
@@ -18,6 +24,13 @@ const Row = styled.div`
   font-size: 14px;
   justify-content: space-between;
   margin-bottom: 8px;
+`
+const StyledHeading = styled(Heading)`
+  font-style: normal;
+  font-weight: normal;
+  font-size: 31px;
+  color: #FFFFFF;
+  text-shadow: 0px 0px 20px #00F0FF;
 `
 
 const CakeStats = () => {
@@ -29,19 +42,19 @@ const CakeStats = () => {
   return (
     <StyledCakeStats>
       <CardBody>
-        <Heading scale="xl" mb="24px">
-          {t('Cake Stats')}
-        </Heading>
+        <StyledHeading scale="xl" mb="24px">
+          {t('VITAMINE STATS')}
+        </StyledHeading>
         <Row>
-          <Text fontSize="14px">{t('Total CAKE Supply')}</Text>
+          <Text fontSize="14px">{t('Market Cap')}</Text>
           {cakeSupply && <CardValue fontSize="14px" value={cakeSupply} />}
         </Row>
         <Row>
-          <Text fontSize="14px">{t('Total CAKE Burned')}</Text>
+          <Text fontSize="14px">{t('Circulating Supply')}</Text>
           <CardValue fontSize="14px" decimals={0} value={burnedBalance} />
         </Row>
         <Row>
-          <Text fontSize="14px">{t('New CAKE/block')}</Text>
+          <Text fontSize="14px">{t('New VITAMINE/block')}</Text>
           <CardValue fontSize="14px" decimals={0} value={20} />
         </Row>
       </CardBody>

@@ -5,8 +5,13 @@ import debounce from 'lodash/debounce'
 import { useTranslation } from 'contexts/Localization'
 
 const StyledInput = styled(Input)`
+  color: #049297;
+  border: 2px solid #7DF1FE;
+  box-sizing: border-box;
+  filter: drop-shadow(0px 0px 4px #44AFF3);
   border-radius: 16px;
   margin-left: auto;
+  background-color: unset;
 `
 
 const InputWrapper = styled.div`

@@ -48,7 +48,7 @@ const Liquidity: React.FunctionComponent<LiquidityProps> = ({ liquidity }) => {
         <Text>{displayLiquidity}</Text>
       </LiquidityWrapper>
       <ReferenceElement ref={targetRef}>
-        <HelpIcon color="textSubtle" />
+        <HelpIcon color="#8DFDFF" />
       </ReferenceElement>
       {tooltipVisible && tooltip}
     </Container>

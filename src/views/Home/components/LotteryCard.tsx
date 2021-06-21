@@ -1,30 +1,33 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Card, CardBody, Button, Link, Text } from '@pancakeswap/uikit'
+import { Card, CardBody, Text } from '@pancakeswap/uikit'
 import { useTranslation } from 'contexts/Localization'
 
 const StyledLotteryCard = styled(Card)`
-  background-image: url('/images/tombola.png');
-  background-repeat: no-repeat;
-  background-position: bottom right;
-  background-size: 70%;
+  background-color: unset;
   min-height: 376px;
+  border: 4px solid #44AFF3;
+  filter: drop-shadow(0px 0px 9px #7DF1FE);
+  border-radius: 25px;
 `
-
 const StyledHeadingText = styled(Text)`
-  font-size: 24px;
-  line-height: 1.1;
-  ${({ theme }) => theme.mediaQueries.lg} {
-    font-size: 40px;
-  }
+  font-style: normal;
+  font-weight: normal;
+  font-size: 31px;
+  color: #FFFFFF;
+  text-shadow: 0px 0px 20px #00F0FF;
 `
 
 const StyledText = styled(Text)`
-  font-size: 40px;
-  line-height: 1.1;
-  ${({ theme }) => theme.mediaQueries.lg} {
-    font-size: 50px;
-  }
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 135%;
+  align-items: center;
+
+  color: #FFFFFF;
+
 `
 
 const LotteryCard = () => {
@@ -34,18 +37,17 @@ const LotteryCard = () => {
     <StyledLotteryCard>
       <CardBody>
         <StyledHeadingText bold mb="24px">
-          PancakeSwap {t('Lottery')} V2
+          ANNOUNCEMENTS
         </StyledHeadingText>
-        <StyledText bold mb="24px" color="#7645d9">
-          {t('Coming Soon...')}
+        <StyledText>
+          {t('Auto-compounding pool is LIVE')}
         </StyledText>
-        <Link external href="https://pancakeswap.medium.com/pancakeswap-april-may-recap-a4e7cf990f72">
-          <Button px={['14px', null, null, null, '20px']}>
-            <Text color="backgroundAlt" bold fontSize="16px">
-              {t('Learn More')}
-            </Text>
-          </Button>
-        </Link>
+        <StyledText>
+          {t('Auto-compounding pool is LIVE')}
+        </StyledText>
+        <StyledText>
+          {t('Auto-compounding pool is LIVE')}
+        </StyledText>
       </CardBody>
     </StyledLotteryCard>
   )

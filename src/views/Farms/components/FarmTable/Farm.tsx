@@ -63,10 +63,15 @@ const Farm: React.FunctionComponent<FarmProps> = ({ token, quoteToken, label, pi
       </TokenWrapper>
       <div>
         {handleRenderFarming()}
-        <Text bold>{label}</Text>
+        <StyledText bold>{label}</StyledText>
       </div>
     </Container>
   )
 }
 
 export default Farm
+
+const StyledText = styled(Text)`
+  color: #FFFFFF;
+  text-shadow: 0px 0px 20px #00F0FF;
+`

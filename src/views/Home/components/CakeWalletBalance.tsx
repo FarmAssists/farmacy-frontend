@@ -19,7 +19,7 @@ const CakeWalletBalance = () => {
 
   if (!account) {
     return (
-      <Text color="textDisabled" style={{ lineHeight: '54px' }}>
+      <Text color="textDisabled" style={{ lineHeight: '54px', color:'#cccccc' }}>
         {t('Locked')}
       </Text>
     )

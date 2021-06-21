@@ -209,15 +209,15 @@ const Pools: React.FC = () => {
       <PageHeader>
         <Flex justifyContent="space-between" flexDirection={['column', null, null, 'row']}>
           <Flex flex="1" flexDirection="column" mr={['8px', 0]}>
-            <Heading as="h1" scale="xxl" color="secondary" mb="24px">
-              {t('Syrup Pools')}
-            </Heading>
-            <Heading scale="md" color="text">
+            <StyledMainHeading scale="xxl" color="#FFFFFF" mb="24px">
+              {t('POOLS')}
+            </StyledMainHeading>
+            <StyledHeading scale="md" color="text">
               {t('Just stake some tokens to earn.')}
-            </Heading>
-            <Heading scale="md" color="text">
+            </StyledHeading>
+            <StyledSubHeading scale="md" color="text">
               {t('High APR, low risk.')}
-            </Heading>
+            </StyledSubHeading>
           </Flex>
           <Flex flex="1" height="fit-content" justifyContent="center" alignItems="center" mt={['24px', null, '0']}>
             <HelpButton />
@@ -294,3 +294,21 @@ const Pools: React.FC = () => {
 }
 
 export default Pools
+
+const StyledMainHeading = styled(Heading)`
+  font-style: normal;
+  font-weight: normal;
+  font-size: 58px;
+  color: #FFFFFF;
+  text-shadow: 0px 0px 20px #FFFFFF;
+`
+
+const StyledHeading = styled(Heading)`
+  color: #8DF4FF;
+  text-shadow: 0px 0px 20px #FFFFFF;
+`
+
+const StyledSubHeading = styled(Heading)`
+  color: #FFFFFF;
+  text-shadow: 0px 0px 20px #FFFFFF;
+`

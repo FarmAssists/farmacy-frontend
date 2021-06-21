@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import styled from 'styled-components'
 import { Button, Skeleton, Text } from '@pancakeswap/uikit'
 import BigNumber from 'bignumber.js'
 import { useWeb3React } from '@web3-react/core'
@@ -41,8 +42,8 @@ const HarvestAction: React.FunctionComponent<HarvestActionProps> = ({ pid, userD
   return (
     <ActionContainer>
       <ActionTitles>
-        <Text bold textTransform="uppercase" color="secondary" fontSize="12px" pr="4px">
-          CAKE
+        <Text bold textTransform="uppercase" color=" #8DFDFF" fontSize="12px" pr="4px">
+          VITAMINE
         </Text>
         <Text bold textTransform="uppercase" color="textSubtle" fontSize="12px">
           {t('Earned')}
@@ -55,7 +56,7 @@ const HarvestAction: React.FunctionComponent<HarvestActionProps> = ({ pid, userD
             <Balance fontSize="12px" color="textSubtle" decimals={2} value={earningsBusd} unit=" USD" prefix="~" />
           )}
         </div>
-        <Button
+        <StyledHarvestButton
           disabled={earnings.eq(0) || pendingTx || !userDataReady}
           onClick={async () => {
             setPendingTx(true)
@@ -67,10 +68,20 @@ const HarvestAction: React.FunctionComponent<HarvestActionProps> = ({ pid, userD
           ml="4px"
         >
           {t('Harvest')}
-        </Button>
+        </StyledHarvestButton>
       </ActionContent>
     </ActionContainer>
   )
 }
 
 export default HarvestAction
+
+const StyledHarvestButton = styled(Button)`
+  background-color: unset;
+  border: 2px solid #C1C0C1;
+  box-sizing: border-box;
+  border-radius: 12px;
+  :disabled {
+    background-color: unset;
+  }
+`

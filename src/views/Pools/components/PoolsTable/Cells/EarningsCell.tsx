@@ -63,7 +63,7 @@ const EarningsCell: React.FC<EarningsCellProps> = ({ pool, account, userDataLoad
   const dateTimeLastAction = new Date(lastActionInMs)
   const dateStringToDisplay = dateTimeLastAction.toLocaleString()
 
-  const labelText = isAutoVault ? t('Recent CAKE profit') : t('%asset% Earned', { asset: earningToken.symbol })
+  const labelText = isAutoVault ? t('Recent VIT profit') : t('Earn', { asset: earningToken.symbol })
   earningTokenBalance = isAutoVault ? autoCakeToDisplay : earningTokenBalance
   hasEarnings = isAutoVault ? hasAutoEarnings : hasEarnings
   earningTokenDollarBalance = isAutoVault ? autoUsdToDisplay : earningTokenDollarBalance
@@ -98,7 +98,7 @@ const EarningsCell: React.FC<EarningsCellProps> = ({ pool, account, userDataLoad
   return (
     <StyledCell role="cell">
       <CellContent>
-        <Text fontSize="12px" color="textSubtle" textAlign="left">
+        <Text fontSize="12px" color="#8DFDFF" textAlign="left">
           {labelText}
         </Text>
         {!userDataLoaded && account ? (
@@ -112,7 +112,7 @@ const EarningsCell: React.FC<EarningsCellProps> = ({ pool, account, userDataLoad
                   mt="4px"
                   bold={!isXs && !isSm}
                   fontSize={isXs || isSm ? '14px' : '16px'}
-                  color={hasEarnings ? 'primary' : 'textDisabled'}
+                  color={hasEarnings ? 'color: #FFFFFF' : '#CCCCCC'}
                   decimals={hasEarnings ? 5 : 1}
                   value={hasEarnings ? earningTokenBalance : 0}
                 />
@@ -120,21 +120,21 @@ const EarningsCell: React.FC<EarningsCellProps> = ({ pool, account, userDataLoad
                   <Balance
                     display="inline"
                     fontSize="12px"
-                    color={hasEarnings ? 'textSubtle' : 'textDisabled'}
+                    color={hasEarnings ? '#FFFFFF' : '#CCCCCC'}
                     decimals={2}
                     value={earningTokenDollarBalance}
                     unit=" USD"
                     prefix="~"
                   />
                 ) : (
-                  <Text mt="4px" fontSize="12px" color={hasEarnings ? 'textSubtle' : 'textDisabled'}>
+                  <Text mt="4px" fontSize="12px" color={hasEarnings ? 'color: #FFFFFF' : '#CCCCCC'}>
                     0 USD
                   </Text>
                 )}
               </Box>
               {isAutoVault && hasEarnings && !isXs && !isSm && (
                 <HelpIconWrapper ref={targetRef}>
-                  <HelpIcon color="textSubtle" />
+                  <HelpIcon color="#8DFDFF" />
                 </HelpIconWrapper>
               )}
             </Flex>

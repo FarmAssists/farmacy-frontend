@@ -48,7 +48,7 @@ const Multiplier: React.FunctionComponent<MultiplierProps> = ({ multiplier }) =>
     <Container>
       <MultiplierWrapper>{displayMultiplier}</MultiplierWrapper>
       <ReferenceElement ref={targetRef}>
-        <HelpIcon color="textSubtle" />
+        <HelpIcon color="#8DFDFF" />
       </ReferenceElement>
       {tooltipVisible && tooltip}
     </Container>

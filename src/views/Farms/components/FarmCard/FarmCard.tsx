@@ -45,8 +45,10 @@ const StyledCardAccent = styled.div`
 
 const FCard = styled.div<{ isPromotedFarm: boolean }>`
   align-self: baseline;
-  background: ${(props) => props.theme.card.background};
-  border-radius: ${({ theme, isPromotedFarm }) => (isPromotedFarm ? '31px' : theme.radii.card)};
+  background-color: unset;
+  border: 4px solid #44AFF3;
+  filter: drop-shadow(0px 0px 0.5px #7DF1FE);
+  border-radius: 25px;
   box-shadow: 0px 1px 4px rgba(25, 19, 38, 0.15);
   display: flex;
   flex-direction: column;
@@ -86,7 +88,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, account }
       : ''
 
   const lpLabel = farm.lpSymbol && farm.lpSymbol.toUpperCase().replace('PANCAKE', '')
-  const earnLabel = farm.dual ? farm.dual.earnLabel : 'CAKE'
+  const earnLabel = farm.dual ? farm.dual.earnLabel : 'VITAMINE'
 
   const farmAPR = farm.apr && farm.apr.toLocaleString('en-US', { maximumFractionDigits: 2 })
 
@@ -96,7 +98,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, account }
   })
   const addLiquidityUrl = `${BASE_ADD_LIQUIDITY_URL}/${liquidityUrlPathParts}`
   const lpAddress = farm.lpAddresses[process.env.REACT_APP_CHAIN_ID]
-  const isPromotedFarm = farm.token.symbol === 'CAKE'
+  const isPromotedFarm = farm.token.symbol === 'VITAMINE'
 
   return (
     <FCard isPromotedFarm={isPromotedFarm}>

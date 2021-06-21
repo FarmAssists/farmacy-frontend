@@ -21,6 +21,9 @@ import Balance from 'components/Balance'
 import BountyModal from './BountyModal'
 
 const StyledCard = styled(Card)`
+  background-color: unset;
+  border: 2px solid #8AF7FB;
+  border-radius: 25px;
   width: 100%;
   flex: 1;
   ${({ theme }) => theme.mediaQueries.sm} {
@@ -73,27 +76,27 @@ const BountyCard = () => {
         <CardBody>
           <Flex flexDirection="column">
             <Flex alignItems="center" mb="12px">
-              <Text fontSize="16px" bold color="textSubtle" mr="4px">
+              <Text fontSize="16px" bold color="#FFFFFF" mr="4px">
                 {t('Auto CAKE Bounty')}
               </Text>
               <Box ref={targetRef}>
-                <HelpIcon color="textSubtle" />
+                <HelpIcon color="#8DFDFF" />
               </Box>
             </Flex>
           </Flex>
           <Flex alignItems="center" justifyContent="space-between">
             <Flex flexDirection="column" mr="12px">
-              <Heading>
+              <StyledHeading>
                 {hasFetchedCakeBounty ? (
                   <Balance fontSize="20px" bold value={cakeBountyToDisplay} decimals={3} />
                 ) : (
                   <Skeleton height={20} width={96} mb="2px" />
                 )}
-              </Heading>
+              </StyledHeading>
               {hasFetchedDollarBounty ? (
                 <Balance
                   fontSize="12px"
-                  color="textSubtle"
+                  color="#FFFFFF"
                   value={dollarBountyToDisplay}
                   decimals={2}
                   unit=" USD"
@@ -103,14 +106,14 @@ const BountyCard = () => {
                 <Skeleton height={16} width={62} />
               )}
             </Flex>
-            <Button
+            <StyledButton
               disabled={!dollarBountyToDisplay || !cakeBountyToDisplay || !callFee}
               onClick={onPresentBountyModal}
               scale="sm"
               id="clickClaimVaultBounty"
             >
               {t('Claim')}
-            </Button>
+            </StyledButton>
           </Flex>
         </CardBody>
       </StyledCard>
@@ -119,3 +122,15 @@ const BountyCard = () => {
 }
 
 export default BountyCard
+
+const StyledHeading = styled(Heading)`
+  text-shadow: 0px 0px 2px #FFFFFF;
+`
+const StyledButton = styled(Button)`
+  border: 2px solid #7DF1FE;
+  box-sizing: border-box;
+  border-radius: 12px;
+  background-color: unset;
+  color: #8DFDFF;
+  text-shadow: 0px 0px 2px #8DFDFF;
+`

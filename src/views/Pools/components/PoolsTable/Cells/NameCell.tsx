@@ -73,13 +73,13 @@ const NameCell: React.FC<NameCellProps> = ({ pool }) => {
             {t('Staked')}
           </Text>
         )}
-        <Text bold={!isXs && !isSm} small={isXs || isSm}>
+        <StyledPoolText bold={!isXs && !isSm} small={isXs || isSm}>
           {title}
-        </Text>
+        </StyledPoolText>
         {showSubtitle && (
-          <Text fontSize="12px" color="textSubtle">
+          <StyledPoolSubText fontSize="12px" color="textSubtle">
             {subtitle}
-          </Text>
+          </StyledPoolSubText>
         )}
       </CellContent>
     </StyledCell>
@@ -87,3 +87,12 @@ const NameCell: React.FC<NameCellProps> = ({ pool }) => {
 }
 
 export default NameCell
+
+const StyledPoolText = styled(Text)`
+  color: #FFFFFF;
+  text-shadow: 0px 0px 15px #00F0FF;
+`
+
+const StyledPoolSubText = styled(Text)`
+  color: #FFFFFF;
+`

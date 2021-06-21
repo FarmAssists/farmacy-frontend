@@ -4,7 +4,7 @@ import { Box } from '@pancakeswap/uikit'
 import Container from '../layout/Container'
 
 const Outer = styled(Box)<{ background?: string }>`
-  background: ${({ theme, background }) => background || theme.colors.gradients.bubblegum};
+  background: unset;
 `
 
 const Inner = styled(Container)`

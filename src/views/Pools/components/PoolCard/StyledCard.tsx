@@ -26,16 +26,10 @@ export const StyledCard = styled(Card)<{ isPromoted?: PromotedStyleCardProps; is
   position: relative;
   color: ${({ isFinished, theme }) => theme.colors[isFinished ? 'textDisabled' : 'secondary']};
   box-shadow: 0px 1px 4px rgba(25, 19, 38, 0.15);
-
-  ${({ isPromoted, theme }) =>
-    isPromoted
-      ? css`
-          background: linear-gradient(180deg, ${theme.colors.primaryBright}, ${theme.colors.secondary});
-          padding: 1px 1px 3px 1px;
-          background-size: 400% 400%;
-        `
-      : `background: ${(props) => props.theme.card.background};`}
-
+  border: 4px solid #44AFF3;
+  filter: drop-shadow(0px 0px 5px #7DF1FE);
+  border-radius: 25px;
+  background-color: unset;
   ${({ isPromoted }) =>
     isPromoted &&
     isPromoted.isDesktop &&
@@ -49,7 +43,7 @@ export const StyledCard = styled(Card)<{ isPromoted?: PromotedStyleCardProps; is
 `
 
 export const StyledCardInner = styled(Box)`
-  background: ${({ theme }) => theme.card.background};
+  background-color: unset;
   border-radius: ${({ theme }) => theme.radii.card};
 `
 

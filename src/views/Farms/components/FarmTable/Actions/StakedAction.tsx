@@ -100,7 +100,7 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({
     return (
       <ActionContainer>
         <ActionTitles>
-          <Text bold textTransform="uppercase" color="textSubtle" fontSize="12px">
+          <Text bold textTransform="uppercase" color="#8DFDFF" fontSize="12px">
             {t('Start Farming')}
           </Text>
         </ActionTitles>

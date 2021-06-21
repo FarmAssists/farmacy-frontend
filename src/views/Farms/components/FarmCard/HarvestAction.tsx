@@ -10,6 +10,7 @@ import { BIG_ZERO } from 'utils/bigNumber'
 import { useWeb3React } from '@web3-react/core'
 import { usePriceCakeBusd } from 'state/hooks'
 import Balance from 'components/Balance'
+import styled from 'styled-components'
 
 interface FarmCardActionsProps {
   earnings?: BigNumber
@@ -35,7 +36,7 @@ const HarvestAction: React.FC<FarmCardActionsProps> = ({ earnings, pid }) => {
           <Balance fontSize="12px" color="textSubtle" decimals={2} value={earningsBusd} unit=" USD" prefix="~" />
         )}
       </Flex>
-      <Button
+      <StyledHarvestButton
         disabled={rawEarningsBalance.eq(0) || pendingTx}
         onClick={async () => {
           setPendingTx(true)
@@ -46,9 +47,16 @@ const HarvestAction: React.FC<FarmCardActionsProps> = ({ earnings, pid }) => {
         }}
       >
         {t('Harvest')}
-      </Button>
+      </StyledHarvestButton>
     </Flex>
   )
 }
 
 export default HarvestAction
+
+const StyledHarvestButton = styled.button`
+background-color: unset;
+  :disabled {
+    background-color: unset;
+  }
+`

@@ -47,13 +47,15 @@ const ToggleWrapper = styled.div`
   display: flex;
   align-items: center;
   margin-left: 10px;
-
+  color: #FFFFFF;
   ${Text} {
     margin-left: 8px;
   }
 `
 
 const LabelWrapper = styled.div`
+  color: #8DFDFF;
+  background-color: unset;
   > ${Text} {
     font-size: 12px;
   }
@@ -341,14 +343,14 @@ const Farms: React.FC = () => {
 
   return (
     <>
-      <PageHeader>
-        <Heading as="h1" scale="xxl" color="secondary" mb="24px">
-          {t('Farms')}
-        </Heading>
-        <Heading scale="lg" color="text">
+      <StyledPageHeader>
+        <StyledHeading scale="xxl"mb="24px">
+          {t('FARMS')}
+        </StyledHeading>
+        <StyledSubHeading scale="lg">
           {t('Stake Liquidity Pool (LP) tokens to earn.')}
-        </Heading>
-      </PageHeader>
+        </StyledSubHeading>
+      </StyledPageHeader>
       <Page>
         <ControlContainer>
           <ViewControls>
@@ -403,3 +405,21 @@ const Farms: React.FC = () => {
 }
 
 export default Farms
+
+const StyledHeading = styled(Heading)`
+  font-style: normal;
+  font-weight: normal;
+  font-size: 60px;
+  color: #FFFFFF;
+  text-shadow: 0px 0px 20px #FFFFFF;
+`
+const StyledSubHeading = styled(Heading)`
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  color: #FFFFFF;
+`
+
+const StyledPageHeader = styled(PageHeader)`
+  background: unset;
+`
