@@ -50,7 +50,7 @@ const Container = styled.div<{ expanded }>`
           ${collapseAnimation} 300ms linear forwards
         `};
   overflow: hidden;
-  background: ${({ theme }) => theme.colors.background};
+  background: unset;
   display: flex;
   width: 100%;
   flex-direction: column-reverse;
@@ -64,10 +64,13 @@ const Container = styled.div<{ expanded }>`
 
 const StyledLinkExternal = styled(LinkExternal)`
   font-weight: 400;
+  color: #8DFDFF;
+  font-family: 'Lato';
+  font-size: 18px;
 `
 
 const StakeContainer = styled.div`
-  color: ${({ theme }) => theme.colors.text};
+  // color: ${({ theme }) => theme.colors.text};
   align-items: center;
   display: flex;
   justify-content: space-between;
@@ -82,8 +85,9 @@ const TagsContainer = styled.div`
   align-items: center;
   margin-top: 25px;
 
+
   ${({ theme }) => theme.mediaQueries.sm} {
-    margin-top: 16px;
+    margin-top: 8px;
   }
 
   > div {
@@ -101,7 +105,8 @@ const TagsContainer = styled.div`
 const ActionContainer = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: unset;
+
+
 
   ${({ theme }) => theme.mediaQueries.sm} {
     flex-direction: row;
@@ -113,10 +118,13 @@ const ActionContainer = styled.div`
 
 const InfoContainer = styled.div`
   min-width: 200px;
+
 `
 
 const ValueContainer = styled.div`
   display: block;
+
+
 
   ${({ theme }) => theme.mediaQueries.lg} {
     display: none;
@@ -128,6 +136,8 @@ const ValueWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   margin: 4px 0px;
+
+
 `
 
 const ActionPanel: React.FunctionComponent<ActionPanelProps> = ({

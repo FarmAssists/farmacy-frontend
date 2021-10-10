@@ -55,6 +55,13 @@ const HarvestAction: React.FC<FarmCardActionsProps> = ({ earnings, pid }) => {
 export default HarvestAction
 
 const StyledHarvestButton = styled.button`
+color: #CCCCCC;
+font-family: 'Text Me One';
+border-style: solid;
+border-width: 1px;
+border-color: #C1C0C1;
+border-radius: 10px;
+padding: 5 5 0 0;
 background-color: unset;
   :disabled {
     background-color: unset;

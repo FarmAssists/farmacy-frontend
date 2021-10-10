@@ -24,6 +24,7 @@ import HelpButton from './components/HelpButton'
 import PoolsTable from './components/PoolsTable/PoolsTable'
 import { ViewMode } from './components/ToggleView/ToggleView'
 import { getAprData, getCakeVaultEarnings } from './helpers'
+import '../../style.css'
 
 const CardLayout = styled(FlexLayout)`
   justify-content: center;
@@ -236,7 +237,7 @@ const Pools: React.FC = () => {
           />
           <SearchSortContainer>
             <Flex flexDirection="column" width="50%">
-              <Text fontSize="12px" bold color="textSubtle" textTransform="uppercase">
+              <Text fontSize="12px" fontWeight="500" color="#FFFFFF" fontFamily="Lato" textTransform="uppercase">
                 {t('Sort by')}
               </Text>
               <ControlStretch>
@@ -264,7 +265,7 @@ const Pools: React.FC = () => {
               </ControlStretch>
             </Flex>
             <Flex flexDirection="column" width="50%">
-              <Text fontSize="12px" bold color="textSubtle" textTransform="uppercase">
+              <Text fontSize="12px" fontWeight="500" fontFamily="Lato" color="#FFFFFF" textTransform="uppercase">
                 {t('Search')}
               </Text>
               <ControlStretch>
@@ -296,19 +297,29 @@ const Pools: React.FC = () => {
 export default Pools
 
 const StyledMainHeading = styled(Heading)`
+  font-family: 'Text Me One';
   font-style: normal;
-  font-weight: normal;
-  font-size: 58px;
+  font-weight: 400;
+  font-size: 60px;
   color: #FFFFFF;
   text-shadow: 0px 0px 20px #FFFFFF;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #D6D6D6;
 `
 
 const StyledHeading = styled(Heading)`
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
   color: #8DF4FF;
-  text-shadow: 0px 0px 20px #FFFFFF;
+  text-shadow: 2px 1px 114px #00A1FF;
 `
 
 const StyledSubHeading = styled(Heading)`
+  font-family: 'Lato';
+  font-weight: 500;
+  font-style: normal;
+  font-size: 30px;
   color: #FFFFFF;
-  text-shadow: 0px 0px 20px #FFFFFF;
 `

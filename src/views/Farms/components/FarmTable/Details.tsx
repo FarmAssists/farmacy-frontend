@@ -12,7 +12,9 @@ const Container = styled.div`
   width: 100%;
   justify-content: flex-end;
   padding-right: 8px;
-  color: ${({ theme }) => theme.colors.primary};
+  // color: ${({ theme }) => theme.colors.primary};
+  color: #8DFDFF;
+  font-family: 'Lato';
 
   ${({ theme }) => theme.mediaQueries.sm} {
     padding-right: 0px;

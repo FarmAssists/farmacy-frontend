@@ -18,10 +18,36 @@ interface PoolRowProps {
   userDataLoaded: boolean
 }
 
+
+const StyledTrWrapper = styled.div`
+  background-color: unset;
+  border: 2px solid #FFFFFF;
+  border-radius: 25px;
+  display: flex;
+  height: 120px;
+  `
+
+const StyledInner = styled.div`
+  border: 2px solid #44AFF3;
+  box-shadow: inset 0px 0px 10px #7DF1FE;
+  border-radius: 23px;
+  width: 100%;
+  padding-top: 10px;
+`
+
+const StyledOuter = styled.div`
+  border: 2px solid #44AFF3;
+  box-shadow: 0px 0px 10px #7DF1FE;
+  border-radius: 27px;
+  height: fit-content;
+  margin-top: 15px;
+
+`
+
 const StyledRow = styled.div`
-  background-color: transparent;
   display: flex;
   cursor: pointer;
+  justify-content: space-around;
 `
 
 const PoolRow: React.FC<PoolRowProps> = ({ pool, account, userDataLoaded }) => {
@@ -40,14 +66,20 @@ const PoolRow: React.FC<PoolRowProps> = ({ pool, account, userDataLoaded }) => {
 
   return (
     <>
-      <StyledRow role="row" onClick={toggleExpanded}>
-        <NameCell pool={pool} />
-        <EarningsCell pool={pool} account={account} userDataLoaded={userDataLoaded} />
-        <AprCell pool={pool} performanceFee={performanceFeeAsDecimal} />
-        {(isLg || isXl) && <TotalStakedCell pool={pool} />}
-        {isXl && <EndsInCell pool={pool} />}
-        <ExpandActionCell expanded={expanded} isFullLayout={isMd || isLg || isXl} />
-      </StyledRow>
+      <StyledOuter>
+        <StyledTrWrapper>
+          <StyledInner>
+            <StyledRow role="row" onClick={toggleExpanded}>
+              <NameCell pool={pool} />
+              <EarningsCell pool={pool} account={account} userDataLoaded={userDataLoaded} />
+              <AprCell pool={pool} performanceFee={performanceFeeAsDecimal} />
+                {(isLg || isXl) && <TotalStakedCell pool={pool} />}
+                {isXl && <EndsInCell pool={pool} />}
+              <ExpandActionCell expanded={expanded} isFullLayout={isMd || isLg || isXl} />
+            </StyledRow>
+          </StyledInner>
+        </StyledTrWrapper>
+      </StyledOuter>
       {shouldRenderActionPanel && (
         <ActionPanel
           account={account}

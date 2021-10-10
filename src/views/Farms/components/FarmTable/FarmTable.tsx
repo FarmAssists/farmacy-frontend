@@ -14,14 +14,15 @@ export interface ITableProps {
 
 const Container = styled.div`
   filter: ${({ theme }) => theme.card.dropShadow};
-  width: 100%;
+  width:100%;
   background-color: unset;
-  border-radius: 16px;
-  margin: 16px 0px;
+  border-width: 5px;
+  margin: 10px 0px;
 `
 
 const TableWrapper = styled.div`
   overflow: visible;
+
 
   &::-webkit-scrollbar {
     display: none;
@@ -31,23 +32,29 @@ const TableWrapper = styled.div`
 const StyledTable = styled.table`
   border-collapse: collapse;
   font-size: 14px;
-  border-radius: 4px;
+  border-width: 1px;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
 `
 
+
 const TableBody = styled.tbody`
-  & tr {
+
+& tr {
     td {
       font-size: 16px;
       vertical-align: middle;
+      padding: 10px;
     }
   }
 `
 
 const TableContainer = styled.div`
   position: relative;
+  background-color: unset;
+  margin: 5x;
+  padding: 10px;
 `
 
 const ScrollButtonContainer = styled.div`
@@ -75,12 +82,14 @@ const FarmTable: React.FC<ITableProps> = (props) => {
       <TableContainer>
         <TableWrapper ref={tableWrapperEl}>
           <StyledTable>
+
             <TableBody>
               {rows.map((row) => {
                 return <Row {...row.original} userDataReady={userDataReady} key={`table-row-${row.id}`} />
               })}
             </TableBody>
           </StyledTable>
+
         </TableWrapper>
         <ScrollButtonContainer>
           <Button variant="text" onClick={scrollToTop}>

@@ -6,6 +6,7 @@ import { Text, TokenPairImage } from '@pancakeswap/uikit'
 import { getBalanceNumber } from 'utils/formatBalance'
 import { getAddress } from 'utils/addressHelpers'
 import { Token } from 'config/constants/types'
+import '../../../../style.css'
 
 export interface FarmProps {
   label: string
@@ -15,21 +16,25 @@ export interface FarmProps {
 }
 
 const Container = styled.div`
+  background-color: unset;
   padding-left: 16px;
   display: flex;
   align-items: center;
+  height: fit-content;
+  width: 220px;
 
   ${({ theme }) => theme.mediaQueries.sm} {
-    padding-left: 32px;
+    padding-left: 15px;
   }
 `
 
 const TokenWrapper = styled.div`
   padding-right: 8px;
   width: 24px;
+  background-color: unset;
 
   ${({ theme }) => theme.mediaQueries.sm} {
-    width: 40px;
+    width: 75px;
   }
 `
 
@@ -57,8 +62,8 @@ const Farm: React.FunctionComponent<FarmProps> = ({ token, quoteToken, label, pi
           variant="inverted"
           primaryTokenAddress={getAddress(token.address)}
           secondaryTokenAddress={getAddress(quoteToken.address)}
-          width={40}
-          height={40}
+          width={50}
+          height={50}
         />
       </TokenWrapper>
       <div>
@@ -72,6 +77,12 @@ const Farm: React.FunctionComponent<FarmProps> = ({ token, quoteToken, label, pi
 export default Farm
 
 const StyledText = styled(Text)`
+  font-family: 'Text Me One';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
   color: #FFFFFF;
-  text-shadow: 0px 0px 20px #00F0FF;
+  text-shadow: 0px 0px 15px #00F0FF;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #8DFDFF;
 `

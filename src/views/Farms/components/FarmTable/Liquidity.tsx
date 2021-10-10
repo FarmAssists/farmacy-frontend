@@ -6,6 +6,8 @@ import BigNumber from 'bignumber.js'
 
 const ReferenceElement = styled.div`
   display: inline-block;
+  padding-left: 5px;
+
 `
 
 export interface LiquidityProps {
@@ -13,10 +15,11 @@ export interface LiquidityProps {
 }
 
 const LiquidityWrapper = styled.div`
-  min-width: 110px;
-  font-weight: 600;
+  min-width: 140px;
+  font-weight: 500;
   text-align: right;
   margin-right: 14px;
+
 
   ${({ theme }) => theme.mediaQueries.lg} {
     text-align: left;
@@ -27,6 +30,8 @@ const LiquidityWrapper = styled.div`
 const Container = styled.div`
   display: flex;
   align-items: center;
+  margin-top: -5px;
+
 `
 
 const Liquidity: React.FunctionComponent<LiquidityProps> = ({ liquidity }) => {
@@ -45,10 +50,10 @@ const Liquidity: React.FunctionComponent<LiquidityProps> = ({ liquidity }) => {
   return (
     <Container>
       <LiquidityWrapper>
-        <Text>{displayLiquidity}</Text>
+        <Text color="#FFFFFF" fontSize="22px" fontFamily="Lato">{displayLiquidity}</Text>
       </LiquidityWrapper>
       <ReferenceElement ref={targetRef}>
-        <HelpIcon color="#8DFDFF" />
+        <HelpIcon color="#8DFDFF"/>
       </ReferenceElement>
       {tooltipVisible && tooltip}
     </Container>

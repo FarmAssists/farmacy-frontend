@@ -21,11 +21,17 @@ export interface AprProps {
 const Container = styled.div`
   display: flex;
   align-items: center;
-  color: ${({ theme }) => theme.colors.text};
+  // color: ${({ theme }) => theme.colors.text};
+  color: #FFFFFF;
+  font-family: 'Lato';
+  font-weight: 500;
+  font-size: 22px;
 
   button {
     width: 20px;
     height: 20px;
+    padding-left: 10px;
+
 
     svg {
       path {
@@ -36,7 +42,7 @@ const Container = styled.div`
 `
 
 const AprWrapper = styled.div`
-  min-width: 60px;
+  min-width: 70px;
   text-align: left;
 `
 

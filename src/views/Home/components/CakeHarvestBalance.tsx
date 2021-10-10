@@ -33,7 +33,7 @@ const CakeHarvestBalance: React.FC<CakeHarvestBalanceProps> = ({ farmsWithBalanc
 
   if (!account) {
     return (
-      <Text color="textDisabled" style={{ lineHeight: '76px', color:'#cccccc' }}>
+      <Text color="textDisabled" style={{ lineHeight: '76px', color:'#cccccc', fontFamily: 'Lato' }}>
         {t('Locked')}
       </Text>
     )

@@ -10,6 +10,7 @@ interface ExpandActionCellProps {
 }
 
 const StyledCell = styled(BaseCell)`
+  background-color: unset;
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
@@ -33,7 +34,7 @@ const TotalStakedCell: React.FC<ExpandActionCellProps> = ({ expanded, isFullLayo
   return (
     <StyledCell role="cell">
       {isFullLayout && (
-        <Text color="primary" bold>
+        <Text color="primary" fontSize="18px" fontFamily="Lato" fontStyle="normal" fontWeight="500">
           {expanded ? t('Hide') : t('Details')}
         </Text>
       )}
