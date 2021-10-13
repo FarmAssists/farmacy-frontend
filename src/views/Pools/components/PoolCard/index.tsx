@@ -6,7 +6,7 @@ import { useTranslation } from 'contexts/Localization'
 import { BIG_ZERO } from 'utils/bigNumber'
 import { Pool } from 'state/types'
 import AprRow from './AprRow'
-import { StyledCard, StyledCardInner } from './StyledCard'
+import { StyledCard, StyledCardInner, StyledCardOuter } from './StyledCard'
 import CardFooter from './CardFooter'
 import StyledCardHeader from './StyledCardHeader'
 import CardActions from './CardActions'
@@ -18,6 +18,7 @@ const PoolCard: React.FC<{ pool: Pool; account: string }> = ({ pool, account }) 
   const accountHasStakedBalance = stakedBalance.gt(0)
 
   return (
+    <StyledCardOuter>
     <StyledCard
       isFinished={isFinished && sousId !== 0}
       ribbon={isFinished && <CardRibbon variantColor="textDisabled" text={t('Finished')} />}
@@ -47,6 +48,7 @@ const PoolCard: React.FC<{ pool: Pool; account: string }> = ({ pool, account }) 
         <CardFooter pool={pool} account={account} />
       </StyledCardInner>
     </StyledCard>
+    </StyledCardOuter>
   )
 }
 
