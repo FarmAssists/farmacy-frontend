@@ -406,7 +406,7 @@ const Farms: React.FC = () => {
         </ControlContainer>
         {renderContent()}
         <div ref={loadMoreRef} />
-        <StyledImage src="/images/3dpan.png" alt="Pancake illustration" width={120} height={103} />
+        <StyledImage src="/images/apple-icon-180x180.png" alt="Farm Assistant image" width={80} height={80} />
       </Page>
     </>
   )

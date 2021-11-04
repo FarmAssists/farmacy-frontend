@@ -19,7 +19,7 @@ import { Pool } from 'state/types'
 import PoolCard from './components/PoolCard'
 import CakeVaultCard from './components/CakeVaultCard'
 import PoolTabButtons from './components/PoolTabButtons'
-import BountyCard from './components/BountyCard'
+// import BountyCard from './components/BountyCard'
 import HelpButton from './components/HelpButton'
 import PoolsTable from './components/PoolsTable/PoolsTable'
 import { ViewMode } from './components/ToggleView/ToggleView'
@@ -222,7 +222,7 @@ const Pools: React.FC = () => {
           </Flex>
           <Flex flex="1" height="fit-content" justifyContent="center" alignItems="center" mt={['24px', null, '0']}>
             <HelpButton />
-            <BountyCard />
+            {/* <BountyCard /> */}
           </Flex>
         </Flex>
       </PageHeader>
@@ -284,10 +284,10 @@ const Pools: React.FC = () => {
         <Image
           mx="auto"
           mt="12px"
-          src="/images/3d-syrup-bunnies.png"
-          alt="Pancake illustration"
-          width={192}
-          height={184.5}
+          src="/images/apple-icon-180x180.png"
+          alt="Farm Assistant image"
+          width={80}
+          height={80}
         />
       </Page>
     </>
