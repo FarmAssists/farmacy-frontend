@@ -10,22 +10,26 @@ import useToast from 'hooks/useToast'
 import UnlockButton from 'components/UnlockButton'
 import CakeHarvestBalance from './CakeHarvestBalance'
 import CakeWalletBalance from './CakeWalletBalance'
+import '../../../style.css'
 
 const StyledFarmStakingCard = styled(Card)`
   background-color: unset;
-  min-height: 376px;
-  border: 1px solid #FFDFF0;
+  border: 2px solid #FFDFF0;
   border-radius: 25px;
+  min-height: 450px;
+  display: flex;
 `
 const StyledInner = styled.div`
-  border: 3px solid #FF008A;
-  filter: drop-shadow(0px 0px 5px #C91461);
-  border-radius: 24px;
+  border: 2px solid #FF008A;
+  box-shadow: inset 0px 0px 10px #C91461;
+  border-radius: 23px;
+  width: 100%;
 `
 const StyledOuter = styled.div`
-  border: 3px solid #FF008A;
-  filter: drop-shadow(0px 0px 20px #C91461);
-  border-radius: 28px;
+  border: 2px solid #FF008A;
+  box-shadow: 0px 0px 10px #C91461;
+  border-radius: 27px;
+  height: fit-content;
 `
 
 const Block = styled.div`
@@ -34,14 +38,14 @@ const Block = styled.div`
 
 const CardImage = styled.img`
   margin-bottom: 16px;
+  height: 50px;
 `
 
 const Label = styled.div`
-  font-size: 14px;
+  font-family: 'Lato';
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
-
   color: #FFFFFF;
 `
 
@@ -52,11 +56,14 @@ const Actions = styled.div`
 `
 
 const StyledFarmHeading = styled(Heading)`
+  font-family: 'Text Me One';
   font-style: normal;
   font-weight: normal;
   font-size: 31px;
   color: #FFFFFF;
   text-shadow: 0px 0px 20px #00F0FF;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #8DFDFF;
 `
 const FarmedStakingCard = () => {
   const [pendingTx, setPendingTx] = useState(false)
@@ -85,38 +92,38 @@ const FarmedStakingCard = () => {
     <StyledOuter>
       <StyledFarmStakingCard>
         <StyledInner>
-        <CardBody>
-          <StyledFarmHeading scale="xl" mb="24px">
-            {t('FARM & STAKING')}
-          </StyledFarmHeading>
-          <CardImage src="/images/meds1.png" alt="cake logo" width={64} height={64} />
-          <Block>
-            <Label>{t('VITAMINE to Harvest')}:</Label>
-            <CakeHarvestBalance farmsWithBalance={balancesWithValue} />
-          </Block>
-          <Block>
-            <Label>{t('VITAMINE in Wallet')}:</Label>
-            <CakeWalletBalance />
-          </Block>
-          <Actions>
-            {account ? (
-              <Button
-                id="harvest-all"
-                disabled={balancesWithValue.length <= 0 || pendingTx}
-                onClick={harvestAllFarms}
-                width="40%"
-              >
-                {pendingTx
-                  ? t('Collecting CAKE')
-                  : t('Harvest all (%count%)', {
-                      count: balancesWithValue.length,
-                    })}
-              </Button>
-            ) : (
-              <UnlockButton width="40%" />
-            )}
-          </Actions>
-        </CardBody>
+          <CardBody>
+            <StyledFarmHeading scale="xl" mb="24px">
+              {t('FARM & STAKING')}
+            </StyledFarmHeading>
+            <CardImage src="/images/meds1.svg" alt="meds1 image here" />
+            <Block>
+              <Label>{t('VITAMINE to Harvest')}:</Label>
+              <CakeHarvestBalance farmsWithBalance={balancesWithValue} />
+            </Block>
+            <Block>
+              <Label>{t('VITAMINE in Wallet')}:</Label>
+              <CakeWalletBalance />
+            </Block>
+            <Actions>
+              {account ? (
+                <Button
+                  id="harvest-all"
+                  disabled={balancesWithValue.length <= 0 || pendingTx}
+                  onClick={harvestAllFarms}
+                  width="40%"
+                >
+                  {pendingTx
+                    ? t('Collecting CAKE')
+                    : t('Harvest all (%count%)', {
+                        count: balancesWithValue.length,
+                      })}
+                </Button>
+              ) : (
+                <UnlockButton width="40%" />
+              )}
+            </Actions>
+          </CardBody>
         </StyledInner>
       </StyledFarmStakingCard>
     </StyledOuter>

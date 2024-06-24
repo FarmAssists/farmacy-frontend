@@ -5,6 +5,7 @@ import { useTranslation } from 'contexts/Localization'
 
 const ReferenceElement = styled.div`
   display: inline-block;
+  padding-left: 15px;
 `
 
 export interface MultiplierProps {
@@ -12,10 +13,14 @@ export interface MultiplierProps {
 }
 
 const MultiplierWrapper = styled.div`
-  color: ${({ theme }) => theme.colors.text};
+  // color: ${({ theme }) => theme.colors.text};
   width: 36px;
   text-align: right;
   margin-right: 14px;
+  color: #FFFFFF;
+  font-family: 'Lato';
+  font-weight: 500;
+  font-size: 22px;
 
   ${({ theme }) => theme.mediaQueries.lg} {
     text-align: left;
@@ -48,7 +53,7 @@ const Multiplier: React.FunctionComponent<MultiplierProps> = ({ multiplier }) =>
     <Container>
       <MultiplierWrapper>{displayMultiplier}</MultiplierWrapper>
       <ReferenceElement ref={targetRef}>
-        <HelpIcon color="#8DFDFF" />
+        <HelpIcon color="#8DFDFF"/>
       </ReferenceElement>
       {tooltipVisible && tooltip}
     </Container>

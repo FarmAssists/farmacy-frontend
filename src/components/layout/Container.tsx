@@ -6,6 +6,9 @@ const Container = styled.div`
   max-width: 1200px;
   padding-left: 16px;
   padding-right: 16px;
+  border-style: solid;
+  border-width: 0px;
+  border-color: green;
 
   ${({ theme }) => theme.mediaQueries.sm} {
     padding-left: 24px;

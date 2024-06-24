@@ -2,7 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Label = styled.div`
-  font-size: 12px;
+  font-family: 'Lato';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
   color: #8DFDFF;
   text-align: left;
 `
@@ -11,6 +14,10 @@ const ContentContainer = styled.div`
   min-height: 24px;
   display: flex;
   align-items: center;
+  font-size: 18px;
+  font-style: normal;
+  color: #FFFFFF;
+  padding-top: 5px;
 `
 
 interface CellLayoutProps {

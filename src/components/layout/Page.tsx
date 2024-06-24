@@ -12,6 +12,7 @@ const StyledPage = styled(Container)`
   padding-top: 16px;
   padding-bottom: 16px;
 
+
   ${({ theme }) => theme.mediaQueries.sm} {
     padding-top: 24px;
     padding-bottom: 24px;

@@ -48,7 +48,9 @@ const Apr: React.FC<AprProps> = ({ pool, showIcon, performanceFee = 0, ...props 
           <Flex>
             <Balance
               onClick={openRoiModal}
-              fontSize="16px"
+              fontSize="22px"
+              fontFamily="Lato"
+              color="#FFFFFF"
               isDisabled={isFinished}
               value={isFinished ? 0 : earningsPercentageToDisplay}
               decimals={2}
@@ -64,7 +66,7 @@ const Apr: React.FC<AprProps> = ({ pool, showIcon, performanceFee = 0, ...props 
                 height="20px"
                 mr={['-14px', '-14px', '0px']}
               >
-                <CalculateIcon color="textSubtle" width="20px" />
+                <CalculateIcon color="textSubtle" width="30px" />
               </IconButton>
             </Flex>
           )}

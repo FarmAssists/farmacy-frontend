@@ -16,12 +16,10 @@ const StyledTable = styled.div`
 
   background-color: unset;
   > div:not(:last-child) {
-    border-bottom: 3px solid #8AF7FB;
   }
 `
 
 const StyledTableBorder = styled.div`
-  border: 3px solid #8AF7FB;
   border-radius: ${({ theme }) => theme.radii.card};
   background-color: unset;
   padding: 1px 1px 3px 1px;

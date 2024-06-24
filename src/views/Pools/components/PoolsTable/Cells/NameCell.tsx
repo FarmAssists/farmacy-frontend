@@ -57,14 +57,14 @@ const NameCell: React.FC<NameCellProps> = ({ pool }) => {
   return (
     <StyledCell role="cell">
       {isAutoVault ? (
-        <CakeVaultTokenPairImage mr="8px" width={40} height={40} />
+        <CakeVaultTokenPairImage mr="20px" width={45} height={45} />
       ) : (
         <TokenPairImage
           primaryTokenAddress={getAddress(earningToken.address)}
           secondaryTokenAddress={getAddress(stakingToken.address)}
-          mr="8px"
-          width={40}
-          height={40}
+          mr="20px"
+          width={45}
+          height={45}
         />
       )}
       <CellContent>
@@ -89,10 +89,21 @@ const NameCell: React.FC<NameCellProps> = ({ pool }) => {
 export default NameCell
 
 const StyledPoolText = styled(Text)`
+  font-family: 'Text Me One';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 25px;
   color: #FFFFFF;
+  // width: 120px;
   text-shadow: 0px 0px 15px #00F0FF;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #8DFDFF;
 `
 
 const StyledPoolSubText = styled(Text)`
   color: #FFFFFF;
+  font-size: 18px;
+  font-style: normal;
+  font-family: 'Lato';
+  font-weight: 500;
 `

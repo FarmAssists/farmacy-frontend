@@ -10,10 +10,12 @@ declare module 'styled-components' {
 const GlobalStyle = createGlobalStyle`
   * {
     font-family: 'Text Me One', sans-serif;
+    font-family: 'Lato', sans-serif;
   }
   body {
     background-color: #000000;
     background-image: url('/images/background.png');
+    background-size: 100%;
 
     img {
       height: auto;

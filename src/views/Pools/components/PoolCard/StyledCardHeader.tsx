@@ -70,6 +70,7 @@ const StyledCardHeader: React.FC<{
 
 export default StyledCardHeader
 
-const StyledHeading = styled(Heading)`color: #FFFFFF;
-text-shadow: 0px 0px 10px #00F0FF;
+const StyledHeading = styled(Heading)`
+color: #FFFFFF;
+// text-shadow: 0px 0px 10px #00F0FF;
 `

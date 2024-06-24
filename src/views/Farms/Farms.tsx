@@ -24,13 +24,13 @@ import FarmTabButtons from './components/FarmTabButtons'
 import { RowProps } from './components/FarmTable/Row'
 import ToggleView from './components/ToggleView/ToggleView'
 import { DesktopColumnSchema, ViewMode } from './components/types'
+import '../../style.css'
 
 const ControlContainer = styled.div`
   display: flex;
   width: 100%;
   align-items: center;
   position: relative;
-
   justify-content: space-between;
   flex-direction: column;
   margin-bottom: 32px;
@@ -50,14 +50,20 @@ const ToggleWrapper = styled.div`
   color: #FFFFFF;
   ${Text} {
     margin-left: 8px;
+    color: #FFFFFF;
+    font-family: 'Lato';
+    font-size: 22px;
+    font-weight: 400;
   }
 `
 
 const LabelWrapper = styled.div`
-  color: #8DFDFF;
-  background-color: unset;
+  color: #FFFFFF;
   > ${Text} {
+    font-family: 'Lato';
     font-size: 12px;
+    color: #FFFFFF;
+    font-weight: 400;
   }
 `
 
@@ -74,6 +80,7 @@ const FilterContainer = styled.div`
 `
 
 const ViewControls = styled.div`
+  margin-top: 20px;
   flex-wrap: wrap;
   justify-content: space-between;
   display: flex;
@@ -81,7 +88,7 @@ const ViewControls = styled.div`
   width: 100%;
 
   > div {
-    padding: 8px 0px;
+    padding-top: 8px 0px;
   }
 
   ${({ theme }) => theme.mediaQueries.sm} {
@@ -99,6 +106,7 @@ const StyledImage = styled(Image)`
   margin-right: auto;
   margin-top: 58px;
 `
+
 const NUMBER_OF_FARMS_VISIBLE = 12
 
 const Farms: React.FC = () => {
@@ -356,7 +364,7 @@ const Farms: React.FC = () => {
           <ViewControls>
             <ToggleView viewMode={viewMode} onToggle={(mode: ViewMode) => setViewMode(mode)} />
             <ToggleWrapper>
-              <Toggle checked={stakedOnly} onChange={() => setStakedOnly(!stakedOnly)} scale="sm" />
+              <Toggle checked={stakedOnly} onChange={() => setStakedOnly(!stakedOnly)} scale="md" />
               <Text> {t('Staked only')}</Text>
             </ToggleWrapper>
             <FarmTabButtons hasStakeInFinishedFarms={stakedInactiveFarms.length > 0} />
@@ -398,7 +406,7 @@ const Farms: React.FC = () => {
         </ControlContainer>
         {renderContent()}
         <div ref={loadMoreRef} />
-        <StyledImage src="/images/3dpan.png" alt="Pancake illustration" width={120} height={103} />
+        <StyledImage src="/images/apple-icon-180x180.png" alt="Farm Assistant image" width={80} height={80} />
       </Page>
     </>
   )
@@ -407,17 +415,22 @@ const Farms: React.FC = () => {
 export default Farms
 
 const StyledHeading = styled(Heading)`
+  font-family: 'Text Me One';
   font-style: normal;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 60px;
   color: #FFFFFF;
   text-shadow: 0px 0px 20px #FFFFFF;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #D6D6D6;
 `
 const StyledSubHeading = styled(Heading)`
+  font-family: 'Lato';
   font-style: normal;
   font-weight: 500;
   font-size: 30px;
-  color: #FFFFFF;
+  color: #8DF4FF;
+  text-shadow: 2px 1px 114px #00A1FF;
 `
 
 const StyledPageHeader = styled(PageHeader)`

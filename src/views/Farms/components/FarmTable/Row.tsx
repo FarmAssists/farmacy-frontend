@@ -38,12 +38,32 @@ const cells = {
   liquidity: Liquidity,
 }
 
+const StyledTrWrapper = styled.div`
+  background-color: unset;
+  border: 2px solid #FFFFFF;
+  border-radius: 25px;
+  display: flex;
+`
+
+const StyledInner = styled.div`
+  border: 2px solid #44AFF3;
+  box-shadow: inset 0px 0px 10px #7DF1FE;
+  border-radius: 23px;
+  width: 100%;
+`
+const StyledOuter = styled.div`
+  border: 2px solid #44AFF3;
+  box-shadow: 0px 0px 10px #7DF1FE;
+  border-radius: 27px;
+  height: fit-content;
+  margin-top: 15px;
+`
+
 const CellInner = styled.div`
   padding: 24px 0px;
-  display: flex;
   width: 100%;
-  align-items: center;
-  padding-right: 8px;
+  // padding-right: 20px;
+  background-color: unset;
 
   ${({ theme }) => theme.mediaQueries.xl} {
     padding-right: 32px;
@@ -51,9 +71,10 @@ const CellInner = styled.div`
 `
 
 const StyledTr = styled.tr`
+display: flex;
+justify-content: space-around;
   cursor: pointer;
-  border: 1.5px solid #8AF7FB;
-  border-radius: 25px;
+  // border-bottom: 2px solid ${({ theme }) => theme.colors.cardBorder};
 `
 
 const EarnedMobileCell = styled.td`
@@ -93,47 +114,53 @@ const Row: React.FunctionComponent<RowPropsWithLoading> = (props) => {
   const handleRenderRow = () => {
     if (!isXs) {
       return (
-        <StyledTr onClick={toggleActionPanel}>
-          {Object.keys(props).map((key) => {
-            const columnIndex = columnNames.indexOf(key)
-            if (columnIndex === -1) {
-              return null
-            }
+        <StyledOuter>
+          <StyledTrWrapper>
+            <StyledInner>
+              <StyledTr onClick={toggleActionPanel}>
+                {Object.keys(props).map((key) => {
+                  const columnIndex = columnNames.indexOf(key)
+                    if (columnIndex === -1) {
+                      return null
+                    }
 
-            switch (key) {
-              case 'details':
-                return (
-                  <td key={key}>
-                    <CellInner>
-                      <CellLayout>
-                        <Details actionPanelToggled={actionPanelExpanded} />
-                      </CellLayout>
-                    </CellInner>
-                  </td>
-                )
-              case 'apr':
-                return (
-                  <td key={key}>
-                    <CellInner>
-                      <CellLayout label={t('APR')}>
-                        <Apr {...props.apr} hideButton={isMobile} />
-                      </CellLayout>
-                    </CellInner>
-                  </td>
-                )
-              default:
-                return (
-                  <td key={key}>
-                    <CellInner>
-                      <CellLayout label={t(tableSchema[columnIndex].label)}>
-                        {React.createElement(cells[key], { ...props[key], userDataReady })}
-                      </CellLayout>
-                    </CellInner>
-                  </td>
-                )
-            }
-          })}
-        </StyledTr>
+                  switch (key) {
+                    case 'details':
+                      return (
+                        <td key={key}>
+                          <CellInner>
+                            <CellLayout>
+                              <Details actionPanelToggled={actionPanelExpanded} />
+                            </CellLayout>
+                          </CellInner>
+                        </td>
+                      )
+                    case 'apr':
+                      return (
+                        <td key={key}>
+                          <CellInner>
+                            <CellLayout label={t('APR')}>
+                              <Apr {...props.apr} hideButton={isMobile} />
+                            </CellLayout>
+                          </CellInner>
+                        </td>
+                      )
+                    default:
+                      return (
+                        <td key={key}>
+                          <CellInner>
+                            <CellLayout label={t(tableSchema[columnIndex].label)}>
+                              {React.createElement(cells[key], { ...props[key], userDataReady })}
+                            </CellLayout>
+                          </CellInner>
+                        </td>
+                      )
+                  }
+                })}
+              </StyledTr>
+            </StyledInner>
+          </StyledTrWrapper>
+        </StyledOuter>
       )
     }
 

@@ -9,6 +9,7 @@ import { usePriceCakeBusd } from 'state/hooks'
 import { BigNumber } from 'bignumber.js'
 import CardValue from './CardValue'
 import CardBusdValue from './CardBusdValue'
+import '../../../style.css'
 
 const CakeWalletBalance = () => {
   const { t } = useTranslation()
@@ -19,7 +20,7 @@ const CakeWalletBalance = () => {
 
   if (!account) {
     return (
-      <Text color="textDisabled" style={{ lineHeight: '54px', color:'#cccccc' }}>
+      <Text color="textDisabled" style={{ lineHeight: '54px', color:'#cccccc', fontFamily: 'Lato'}}>
         {t('Locked')}
       </Text>
     )

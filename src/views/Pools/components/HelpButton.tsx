@@ -26,12 +26,12 @@ const StyledLink = styled(Link)`
 const HelpButton = () => {
   const { t } = useTranslation()
   return (
-    <StyledLink external href="https://docs.pancakeswap.finance/syrup-pools/syrup-pool">
-      <StyledHelpButton px={['14px', null, null, null, '20px']} variant="subtle">
+    <StyledLink external href="https://discord.com/invite/a7pFYXeGEV">
+      <StyledHelpButton px={['8px', null, null, null, '40px']} variant="subtle">
         <ButtonText color="#FFFFFF" bold fontSize="16px">
           {t('Help')}
         </ButtonText>
-        <HelpIcon color="#8DFDFF" ml={[null, null, null, 0, '6px']} />
+        <HelpIcon color="#FFFFFF" ml={[null, null, null, 0, '8px']} />
       </StyledHelpButton>
     </StyledLink>
   )
@@ -41,6 +41,7 @@ export default HelpButton
 
 const StyledHelpButton = styled(Button)`
   background: #1A1530;
-  border: 2px solid #FFFFFF;
+  border: 1px solid #FFFFFF;
   border-radius: 12px;
+  width: 150px;
 `

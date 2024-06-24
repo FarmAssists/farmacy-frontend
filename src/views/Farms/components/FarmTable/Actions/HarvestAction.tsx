@@ -42,10 +42,10 @@ const HarvestAction: React.FunctionComponent<HarvestActionProps> = ({ pid, userD
   return (
     <ActionContainer>
       <ActionTitles>
-        <Text bold textTransform="uppercase" color=" #8DFDFF" fontSize="12px" pr="4px">
+        <Text bold textTransform="uppercase" color="#8DFDFF" fontSize="18px" pr="4px" fontFamily="Lato" fontWeight="500">
           VITAMINE
         </Text>
-        <Text bold textTransform="uppercase" color="textSubtle" fontSize="12px">
+        <Text bold textTransform="uppercase" color="#FFFFFF" fontSize="18px" fontFamily="Lato" fontWeight="500">
           {t('Earned')}
         </Text>
       </ActionTitles>
@@ -77,10 +77,11 @@ const HarvestAction: React.FunctionComponent<HarvestActionProps> = ({ pid, userD
 export default HarvestAction
 
 const StyledHarvestButton = styled(Button)`
-  background-color: unset;
-  border: 2px solid #C1C0C1;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #8DFDFF;
   box-sizing: border-box;
-  border-radius: 12px;
+  border-radius: 16px;
   :disabled {
     background-color: unset;
   }
